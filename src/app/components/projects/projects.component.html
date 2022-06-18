@@ -1,0 +1,20 @@
+<div class="projects-container">
+
+    <div class="product-card" *ngFor="let project of projectsList">
+        <div class="project-image">
+            <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}">
+        </div>
+        <div class="project-info">
+            <div class="proj-name">{{project.name}}</div>
+            <div class="proj-technologies">
+                <span class="technologies-container" *ngFor="let tech of project.technologies">
+                    <span class="tech-icon"><img src="../../../assets/img/tech-icons/{{tech}}.png" alt="{{tech}}"></span>
+                    <span class="tech-name">{{tech}}</span>
+                </span>
+            </div>
+            <div class="proj-repository">Repository: <a href="{{project.repository}}">{{project.name}}</a></div>
+            <div class="proj-description">{{project.description}}</div>
+        </div>
+    </div>
+
+</div>

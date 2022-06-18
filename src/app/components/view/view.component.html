@@ -1,0 +1,41 @@
+<div class="view-container">
+    <div class="project-container" *ngIf="project">
+        <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" class="project-image" *ngIf="project">
+        <span class="change-image" id="{{project._id}}" (click)="changeImage($event)">Change image</span>
+        <input type="file" name="upload_image" id="upload_image" [hidden]="!showUploadImageBox" (change)="isThereFile($event)">
+        <div class="project-info">
+            <span class="project-item name" contenteditable="true" (blur)="onChanges($event)" #name>{{project.name}}</span>
+            <span class="project-item description" contenteditable="true" (blur)="onChanges($event)" #description>{{project.description}}</span>
+            <span class="project-item repository" contenteditable="true" (blur)="onChanges($event)" #repository>{{project.repository}}</span>
+            <div class="technologies-container">
+                <span class="technology" *ngFor="let tech of project.technologies">
+                    <img src="../../../assets/img/tech-icons/{{tech}}.png" alt="{{tech}}">
+                    {{tech}}
+                </span>
+                <button class="tech-btn" (click)="editTech = true; setTechSelected()">Edit tecnologies</button>
+            </div>
+            <div class="technologies-container hide" #technologiesContainer>
+                <span class="technology">
+                    <input type="checkbox" name="html" (change)="getElementDataToBeAddedOrRemoved($event)" #html>
+                    html
+                </span>
+                <span class="technology">
+                    <input type="checkbox" name="css" (change)="getElementDataToBeAddedOrRemoved($event)" #css>
+                    css
+                </span>
+                <span class="technology">
+                    <input type="checkbox" name="javascript" (change)="getElementDataToBeAddedOrRemoved($event)" #javascript>
+                    javascript
+                </span>
+                <span class="technology">
+                    <input type="checkbox" name="Angular" (change)="getElementDataToBeAddedOrRemoved($event)" #Angular>
+                    Angular
+                </span>
+            </div>
+        </div>
+        <div class="buttons-container">
+            <button id="{{project._id}}" class="save-btn" [hidden]="!saveBtn" (click)="saveChanges()">Save changes</button>
+            <button id="{{project._id}}" class="delete-btn" (click)="deleteProject($event)">Delete</button>
+        </div>
+    </div>
+</div>

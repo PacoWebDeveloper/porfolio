@@ -1,0 +1,60 @@
+.myself-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 660px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 200ms;
+}
+.card:hover {
+    border-radius: 100px;
+}
+h1, h2, img {
+    transition: all 200ms;
+}
+.card:hover h1 {
+    transform: scale(1.2);
+}
+.card:hover h2 {
+    transform: translateX(30px);
+} 
+.card:hover img {
+    transform: rotate(-30deg) translateX(-5px) translateY(50px);
+    transform-origin: left bottom;
+}  
+.myself-info {
+    color: #6bf;
+    text-align: right;
+}
+h1 {
+    font-size: 6em;
+}
+h2 {
+    font-size: 4em;
+}
+.img-container {
+    position: relative;
+    width: 300px;
+}
+img {
+    width: 100%;
+    margin-left: 50px;
+}
+.image {
+    position: absolute;
+    top: 38px;
+    right: -4px;
+    width: 690px;
+    height: 300px;
+    background: linear-gradient(to left, rgb(30,30,30,0.5), transparent);
+    transition: all 300ms;
+}

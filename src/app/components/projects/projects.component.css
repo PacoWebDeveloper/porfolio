@@ -1,0 +1,76 @@
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.product-card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #777;
+    box-shadow: 0 0 20px #000;
+}
+.project-info {
+    padding: 10px;
+}
+.project-image img {
+    width: 100%;
+}
+.proj-name {
+    font-size: 2em;
+    font-weight: bold;
+    color: #6bf;
+    padding-left: 5px;
+    cursor: default;
+}
+.proj-technologies {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.technologies-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    padding-top: 5px;
+    transition: all 300ms;
+}
+.technologies-container:hover {
+    transform: scale(1.2);
+}
+.tech-icon {
+    height: 25px;
+    margin: 3px 0;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+.tech-icon img {
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+}
+.tech-name {
+    font-size: 1em;
+    font-weight: bold;
+}
+.proj-repository {
+    margin-bottom: 5px;
+    color: #ddd;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+.proj-repository a {
+    font-size: 1.1em;
+    color: #6bf;
+}
+.proj-description {
+    font-size: 1.2em;
+    color: #ddd;
+}

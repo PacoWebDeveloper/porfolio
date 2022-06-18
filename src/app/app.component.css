@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: #444;
+    box-shadow: 0 0 15px #6bf;
+}
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: auto;
+    height: 80px;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 80px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 200ms;
+}
+.menu-item:hover {
+    box-shadow: inset 0 0 7px #6bf;
+    border-radius: 3px;
+}
+.menu-item:hover, .Actived {
+    background-color: #555;
+    color: #6bf;
+    font-size: 1.3em;
+    border-bottom: 4px solid #6bf;
+    transition: all 200ms;
+}
+.menu-item:active {
+    transform: rotate(10deg);
+}
+.main-container {
+    width: 80%;
+    min-height: calc(100vh - 170px);
+    margin: 0 auto;
+    margin-top: 90px;
+}

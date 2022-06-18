@@ -1,0 +1,1 @@
+export const url:String = 'http://localhost:3700/api';

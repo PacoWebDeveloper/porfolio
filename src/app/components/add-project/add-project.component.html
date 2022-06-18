@@ -1,0 +1,41 @@
+<div class="addProject-container">
+    <form (ngSubmit)="onSubmit(); projectForm.reset();" #projectForm="ngForm" enctype="multipart/form-data">
+        <span [className]="error ? 'error-message' : 'message'" [hidden]="!showMessage">{{message}}</span>
+        <label for="name">Project name</label>
+        <input type="text" [(ngModel)]="model.name" name="name" id="name" #name="ngModel" required>
+        <span class="error-message" [hidden]="!name.touched || name.valid">Please type the project name</span>
+
+        <label for="technologies">Technologies</label>
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[0]" name="html" id="htmlchk" value="html" #html="ngModel" (change)="selectedTech(0)">
+            <label for="htmlchk" class="checkboxLbl">HMTL</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[1]" name="css" id="csschk" value="css" #css="ngModel" (change)="selectedTech(1)">
+            <label for="csschk" class="checkboxLbl">CSS</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[2]" name="js" id="jschk" value="javascript" #js="ngModel" (change)="selectedTech(2)">
+            <label for="jschk" class="checkboxLbl">JavaScript</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[3]" name="mean" id="meanchk" value="mean" #js="ngModel" (change)="selectedTech(3)">
+            <label for="meanchk" class="checkboxLbl">Angular</label>
+        </div>
+        <span class="error-message" *ngIf="html.touched || css.touched" [hidden]="oneChecked">Please select at least one technology</span>
+
+        <label for="image">Add one image for your project</label>
+        <input type="file" name="upload_image" id="upload_image" #inputFile (change)="isThereFile($event)">
+
+        <label for="repository">Repository (optional)</label>
+        <input type="text" [(ngModel)]="model.repository" name="repository" id="repository" #repository="ngModel">
+
+        <label for="description">Description (optional)</label>
+        <textarea [(ngModel)]="model.description" name="description" id="description" cols="30" rows="10" #description="ngModel"></textarea>
+
+        <button type="submit" [disabled]="!projectForm.form.valid || !oneChecked || !fileSelected">Save</button>
+    </form>
+</div>

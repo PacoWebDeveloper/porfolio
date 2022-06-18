@@ -1,0 +1,134 @@
+.manager-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    min-width: 700px;
+}
+.project-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    gap: 30px;
+    justify-items: center;
+    justify-content: center;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 450px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #777;
+    box-shadow: 0 0 20px #000;
+}
+.project-name {
+    font-size: 1.5em;
+    color: #6bf;
+    margin-bottom: 5px;
+}
+.project-link {
+    color: #ddd;
+    margin-top: 7px;
+}
+.project-technologies {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    padding-bottom: 3px;
+    margin: 5px 0;
+}
+.technology-icon {
+    height: 42px;
+    margin: 3px 7px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms;
+}
+.technology-icon:hover {
+    transform: scale(1.2);
+}
+.technology-icon img {
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+}
+.project-link {
+    font-weight: bold;
+}
+.project-link a {
+    color: #6bf;
+}
+.project-description {
+    font-size: 1.2em;
+    color:#ddd;
+    margin-top: 7px;
+}
+.project-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.project-img img {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+}
+.project-info {
+    width: 100%;
+    height: 225px; 
+    padding: 10px;
+}
+.option-buttons {
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.open-btn, .delete-btn {
+    width: 100px;
+    height: 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 300ms;
+}
+.open-btn {
+    background-color: #ff5;
+    color: #000;
+    margin-right: 5px;
+}
+.open-btn:hover {
+    background-color: #ffc;
+}
+.delete-btn {
+    background-color: #f33;
+    color: #fff;
+    margin-left: 5px;
+}
+.delete-btn:hover {
+    background-color: #f77;
+}
+.error {
+    width: 100%;
+    /* height: calc(100vh - 200px); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+}

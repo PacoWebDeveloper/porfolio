@@ -1,0 +1,25 @@
+<div class="manager-container">
+    <div class="project-list" *ngIf="!errorDB">
+        <div *ngFor="let project of projectsList" class="card">
+            <div class="project-img">
+                <!-- <img src="../../../assets/img/projects/{{project.name}}.jpg" alt="{{project.name}}"> -->
+                <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}">
+            </div>
+            <div class="project-info">
+                <h2 class="project-name">{{project.name}}</h2>
+                <div class="project-technologies">
+                    <span class="technology-icon" *ngFor="let tech of project.technologies">
+                        <img src="../../../assets/img/tech-icons/{{tech}}.png" alt="{{tech}}"> {{tech}}
+                    </span>
+                </div>
+                <span class="project-link">Repository: <a href="{{project.repository}}">{{project.name}}</a></span>                
+                <p class="project-description">{{project.description}}</p>
+            </div>
+            <div class="option-buttons">
+                <button class="open-btn" id="{{project._id}}" (click)="openProject($event)" [routerLink]="['/viewProject']">Open</button>
+                <button class="delete-btn" id="{{project._id}}" name="{{project.imageUrl}}" (click)="deleteProject($event)">Delete</button>
+            </div>
+        </div>
+    </div>
+    <div class="error" [hidden]="!errorDB">{{errorMsg}}</div>
+</div>
