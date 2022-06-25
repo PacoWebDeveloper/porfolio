@@ -15,7 +15,7 @@
             <div class="proj-repository">Repository: <a href="{{project.repository}}">{{project.name}}</a></div>
             <div class="proj-description">{{project.description}}</div>
         </div>
-        <button class="see-more-btn">See more</button>
+        <button class="see-more-btn" id="{{project._id}}" [routerLink]="['/viewProjectUser']" (click)="saveId($event)">See more</button>
     </div>
 
 </div>

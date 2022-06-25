@@ -53,4 +53,9 @@ export class ProjectsComponent implements OnInit {
     })
   }
 
+  saveId(e: any): void {
+    const id = e.target.id;
+    localStorage.setItem('id', id);
+  }
+
 }

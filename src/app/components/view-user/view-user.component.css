@@ -1,0 +1,66 @@
+.view-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+    min-width: 1000px;
+    min-height: calc(100vh - 80px);
+}
+.project-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.project-image {
+    display: block;
+    width: 100%;
+    background-size: cover;
+}
+.project-info {
+    width: 100%;
+}
+.project-item {
+    display: block;
+    width: 100%;
+    font-size: 1.5em;
+    color: #6bf;
+    margin: 5px 0;
+}
+.technologies-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.technology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 70px;
+    margin: 5px;
+    color: #ddd;
+    transition: all 300ms;
+}
+.technology img {
+    width: inherit;
+}
+.technology:hover {
+    transform: scale(1.2);
+}
+.name {
+    font-size: 2.5em;
+}
+.description {
+    color: #ddd;
+}
+.link {
+    font-size: 1em;
+}
+.link:visited {
+    color: #6bf;
+}

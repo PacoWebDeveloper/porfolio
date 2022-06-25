@@ -1,0 +1,16 @@
+<div class="view-container">
+    <div class="project-container" *ngIf="project">
+        <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" class="project-image" *ngIf="project">
+        <div class="project-info">
+            <span class="project-item name">{{project.name}}</span>
+            <span class="project-item description">{{project.description}}</span>
+            <span class="project-item repository">Repository: <a href="{{project.repository}}" target="_blank" class="link">{{project.name}}</a></span>
+            <div class="technologies-container">
+                <span class="technology" *ngFor="let tech of project.technologies">
+                    <img src="../../../assets/img/tech-icons/{{tech}}.png" alt="{{tech}}">
+                    {{tech}}
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

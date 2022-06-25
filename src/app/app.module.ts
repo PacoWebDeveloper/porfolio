@@ -18,6 +18,7 @@ import { AddProjectComponent } from './components/add-project/add-project.compon
 import { ProjectManagerComponent } from './components/project-manager/project-manager.component';
 import { UploadService } from './services/upload.service';
 import { ViewComponent } from './components/view/view.component';
+import { ViewUserComponent } from './components/view-user/view-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ViewComponent } from './components/view/view.component';
     ProjectsComponent,
     AddProjectComponent,
     ProjectManagerComponent,
-    ViewComponent
+    ViewComponent,
+    ViewUserComponent
   ],
   imports: [
     FormsModule,
