@@ -12,7 +12,8 @@ export class ProjectService {
     constructor(
         private _http: HttpClient
     ) {
-        this.url = 'http://localhost:3700/api';
+        /* this.url = 'http://localhost:3700/api'; */
+        this.url = 'https://projects-portfolio-api.herokuapp.com/api'
     }
 
     saveProject(projectData: project): Observable<any> {
