@@ -2,18 +2,18 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { project } from "../models/projectModel";
+import { url } from "../apiUrl";
 
 
 @Injectable()
 export class ProjectService {
-    private url: String;
+    private url: String = url;
     private headers: any = new HttpHeaders().set('Content-type','application/json');
 
     constructor(
         private _http: HttpClient
     ) {
         /* this.url = 'http://localhost:3700/api'; */
-        this.url = 'https://projects-portfolio-api.herokuapp.com/api'
     }
 
     saveProject(projectData: project): Observable<any> {

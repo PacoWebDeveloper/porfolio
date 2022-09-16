@@ -30,6 +30,7 @@
 .project-link {
     color: #ddd;
     margin-top: 7px;
+    cursor: default;
 }
 .project-technologies {
     display: flex;
@@ -68,6 +69,7 @@
     font-size: 1.2em;
     color:#ddd;
     margin-top: 7px;
+    cursor: default;
 }
 .project-img {
     width: 100%;

@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
           return item;
         });
 
-      this.cutDescription(this.projectsList);
+        this.cutDescription(this.projectsList);
       },
       error: (e) => {
         console.error(e);
@@ -43,10 +43,10 @@ export class ProjectsComponent implements OnInit {
 
   cutDescription(projects: Array<any>): void {
     let shortDescription = '';
-    
+
     projects.forEach(item => {
-      if (item.description.length > 200) {        
-        shortDescription = item.description.substr(0,149);
+      if (item.description.length > 200) {
+        shortDescription = item.description.substr(0, 149);
         item.description = shortDescription + ' ...';
         shortDescription = '';
       }
@@ -56,6 +56,10 @@ export class ProjectsComponent implements OnInit {
   saveId(e: any): void {
     const id = e.target.id;
     localStorage.setItem('id', id);
+  }
+
+  setDefaultImage(event: any): void {
+    console.log(event);
   }
 
 }

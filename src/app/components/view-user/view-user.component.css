@@ -6,6 +6,22 @@
     min-width: 1000px;
     min-height: calc(100vh - 80px);
 }
+.go-back-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    position: relative;
+    left: 50px;
+    top: -50px;
+    cursor: pointer;
+}
+.go-back-btn:hover {
+    background-color: #555;
+}
+.go-back-btn > img {
+    width: 100%;
+    height: 100%;
+}
 .project-container {
     width: 100%;
     display: flex;

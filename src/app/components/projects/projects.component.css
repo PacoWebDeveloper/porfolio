@@ -79,10 +79,12 @@
 .proj-repository a {
     font-size: 1.1em;
     color: #6bf;
+    cursor: default;
 }
 .proj-description {
     font-size: 1.2em;
     color: #ddd;
+    cursor: default;
 }
 .button-container {
     width: 100%;

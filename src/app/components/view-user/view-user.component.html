@@ -1,4 +1,5 @@
 <div class="view-container">
+    <span class="go-back-btn" [routerLink]="['/projects']"><img src="../../../assets/img/arrow-back.svg"></span>
     <div class="project-container" *ngIf="project">
         <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" class="project-image" *ngIf="project">
         <div class="project-info">

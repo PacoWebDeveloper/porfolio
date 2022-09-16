@@ -36,6 +36,6 @@
         <label for="description">Description (optional)</label>
         <textarea [(ngModel)]="model.description" name="description" id="description" cols="30" rows="10" #description="ngModel"></textarea>
 
-        <button type="submit" [disabled]="!projectForm.form.valid || !oneChecked || !fileSelected">Save</button>
+        <button type="submit" [disabled]="!projectForm.form.valid || !oneChecked || !fileSelected" (click)="cleanInputFile()">Save</button>
     </form>
 </div>

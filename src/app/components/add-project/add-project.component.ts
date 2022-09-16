@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { project } from 'src/app/models/projectModel';
 import { ProjectService } from 'src/app/services/project.service';
 import { UploadService } from 'src/app/services/upload.service';
@@ -18,6 +18,7 @@ export class AddProjectComponent implements OnInit {
   public message: String = '';
   public showMessage: boolean = false;
   public error: boolean = false;
+  @ViewChild('inputFile') inputFile!: any;
 
   constructor(
     private projectService: ProjectService,
@@ -52,6 +53,10 @@ export class AddProjectComponent implements OnInit {
       this.fileSelected = true;
       this.imageFile = <Array<File>>event.target.files;
     }
+  }
+
+  cleanInputFile(): void {
+    this.inputFile.nativeElement.value = '';
   }
 
   getCurrentDate(): String {

@@ -2,7 +2,7 @@
 
     <div class="product-card" *ngFor="let project of projectsList">
         <div class="project-image">
-            <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}">
+            <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" (change)="setDefaultImage($event)">
         </div>
         <div class="project-info">
             <div class="proj-name">{{project.name}}</div>
