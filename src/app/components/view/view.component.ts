@@ -29,6 +29,8 @@ export class ViewComponent implements OnInit {
   public imageFile: Array<any> = [];
   public showUploadImageBox: boolean = false;
 
+  public loading: boolean = true;
+
   @ViewChild('name') name!: any;
   @ViewChild('description') description!: any;
   @ViewChild('repository') repository!: any;
@@ -61,6 +63,8 @@ export class ViewComponent implements OnInit {
     this.ProjectService.getProjectById(id).subscribe({
       next: (v) => {
         this.project = v.results[0];
+        this.loading = false;
+        
       },
       error: (e) => console.error(e),
       complete: () => console.info('Complete')

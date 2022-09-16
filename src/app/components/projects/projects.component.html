@@ -1,4 +1,5 @@
-<div class="projects-container">
+<app-loading class="loading" *ngIf="loading"></app-loading>
+<div class="projects-container" [hidden]="loading">
 
     <div class="product-card" *ngFor="let project of projectsList">
         <div class="project-image">

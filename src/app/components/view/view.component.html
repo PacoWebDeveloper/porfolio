@@ -1,6 +1,7 @@
 <div class="view-container">
     <span class="go-back-btn" [routerLink]="['/project-manager']"><img src="../../../assets/img/arrow-back.svg"></span>
-    <div class="project-container" *ngIf="project">
+    <app-loading class="loading" *ngIf="loading"></app-loading>
+    <div class="project-container" *ngIf="project && !loading">
         <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" class="project-image" *ngIf="project">
         <span class="change-image" id="{{project._id}}" (click)="changeImage($event)">Change image</span>
         <input type="file" name="upload_image" id="upload_image" [hidden]="!showUploadImageBox" (change)="isThereFile($event)">

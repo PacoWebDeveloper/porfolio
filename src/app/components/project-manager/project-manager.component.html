@@ -1,4 +1,5 @@
-<div class="manager-container">
+<app-loading class="loading" *ngIf="loading"></app-loading>
+<div class="manager-container" *ngIf="!loading">
     <div class="project-list" *ngIf="!errorDB">
         <div *ngFor="let project of projectsList" class="card">
             <div class="project-img">

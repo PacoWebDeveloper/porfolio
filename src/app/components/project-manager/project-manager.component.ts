@@ -16,6 +16,8 @@ export class ProjectManagerComponent implements OnInit {
   public url: String = url;
   public static idProject: String;
 
+  public loading: boolean = true;
+
   constructor(
     private projectService: ProjectService
   ) { }
@@ -34,6 +36,8 @@ export class ProjectManagerComponent implements OnInit {
         });
 
         this.cutDescription(this.projectsList);
+
+        this.loading = false;
       },
       error: (e) => {
         console.error(e);

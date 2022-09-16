@@ -12,6 +12,8 @@ export class ViewUserComponent implements OnInit {
   public url: String = url;
   public project!: any;
 
+  public loading: boolean = true;
+
   constructor(
     private projectService: ProjectService
   ) { }
@@ -30,6 +32,7 @@ export class ViewUserComponent implements OnInit {
     this.projectService.getProjectById(id).subscribe({
       next: (v) => {
         this.project = v.results[0];
+        this.loading = false;
       },
       error: (e) => console.error(e),
       complete: () => console.info('Complete')

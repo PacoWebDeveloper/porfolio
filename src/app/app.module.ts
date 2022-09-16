@@ -19,6 +19,7 @@ import { ProjectManagerComponent } from './components/project-manager/project-ma
 import { UploadService } from './services/upload.service';
 import { ViewComponent } from './components/view/view.component';
 import { ViewUserComponent } from './components/view-user/view-user.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ViewUserComponent } from './components/view-user/view-user.component';
     AddProjectComponent,
     ProjectManagerComponent,
     ViewComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    LoadingComponent
   ],
   imports: [
     FormsModule,

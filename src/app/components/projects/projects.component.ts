@@ -10,6 +10,7 @@ import { ProjectService } from 'src/app/services/project.service';
 export class ProjectsComponent implements OnInit {
   public projectsList!: Array<any>;
   public url: String = url;
+  public loading: boolean = true;
 
   constructor(
     private projectService: ProjectService
@@ -27,6 +28,7 @@ export class ProjectsComponent implements OnInit {
         });
 
         this.cutDescription(this.projectsList);
+        this.loading = false;
       },
       error: (e) => {
         console.error(e);
