@@ -72,7 +72,9 @@ export class AddProjectComponent implements OnInit {
       0: 'html',
       1: 'css',
       2: 'javascript',
-      3: 'Angular'
+      3: 'Angular',
+      4: 'NodeJS',
+      5: 'Express'
     }
 
     let newTechArray : Array<String> = [];

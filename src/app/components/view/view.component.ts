@@ -37,6 +37,8 @@ export class ViewComponent implements OnInit {
   @ViewChild('css') css!: ElementRef;
   @ViewChild('javascript') javascript!: ElementRef;
   @ViewChild('Angular') Angular!: ElementRef;
+  @ViewChild('NodeJS') NodeJS!: ElementRef;
+  @ViewChild('Express') Express!: ElementRef;
 
   constructor(
     private ProjectService: ProjectService,
@@ -99,6 +101,12 @@ export class ViewComponent implements OnInit {
           break;
         case 'Angular':
           this.Angular.nativeElement.checked = true;
+          break;
+        case 'NodeJS':
+          this.NodeJS.nativeElement.checked = true;
+          break;
+        case 'Express':
+          this.Express.nativeElement.checked = true;
           break;
       }      
     });

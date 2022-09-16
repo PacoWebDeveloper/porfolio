@@ -25,6 +25,16 @@
             <input type="checkbox" [(ngModel)]="model.technologies[3]" name="mean" id="meanchk" value="mean" #js="ngModel" (change)="selectedTech(3)">
             <label for="meanchk" class="checkboxLbl">Angular</label>
         </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[4]" name="nodejs" id="nodejschk" value="nodejs" #nodejs="ngModel" (change)="selectedTech(4)">
+            <label for="nodejschk" class="checkboxLbl">NodeJS</label>
+        </div>
+
+        <div class="checkbox-group">
+            <input type="checkbox" [(ngModel)]="model.technologies[5]" name="express" id="expresschk" value="express" #express="ngModel" (change)="selectedTech(5)">
+            <label for="expresschk" class="checkboxLbl">Express</label>
+        </div>
         <span class="error-message" *ngIf="html.touched || css.touched" [hidden]="oneChecked">Please select at least one technology</span>
 
         <label for="image">Add one image for your project</label>

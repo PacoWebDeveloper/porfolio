@@ -1,4 +1,5 @@
 <div class="view-container">
+    <span class="go-back-btn" [routerLink]="['/project-manager']"><img src="../../../assets/img/arrow-back.svg"></span>
     <div class="project-container" *ngIf="project">
         <img src="{{url}}/getImage/{{project.imageUrl}}" alt="{{project.name}}" class="project-image" *ngIf="project">
         <span class="change-image" id="{{project._id}}" (click)="changeImage($event)">Change image</span>
@@ -30,6 +31,14 @@
                 <span class="technology">
                     <input type="checkbox" name="Angular" (change)="getElementDataToBeAddedOrRemoved($event)" #Angular>
                     Angular
+                </span>
+                <span class="technology">
+                    <input type="checkbox" name="NodeJS" (change)="getElementDataToBeAddedOrRemoved($event)" #NodeJS>
+                    NodeJS
+                </span>
+                <span class="technology">
+                    <input type="checkbox" name="Express" (change)="getElementDataToBeAddedOrRemoved($event)" #Express>
+                    Express
                 </span>
             </div>
         </div>
