@@ -1,1 +1,2 @@
-export const url:String = 'http://localhost:3700/api';
+/* export const url:String = 'http://localhost:3700/api'; */ //This URL is used in development
+export const url: String = 'https://projects-portfolio-api.herokuapp.com/api'; //This URL is used in production
