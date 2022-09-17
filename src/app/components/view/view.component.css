@@ -174,3 +174,55 @@
 .show-message {
     opacity: 1;
 }
+.popup {
+    position: fixed;
+    top: 50vh;
+    left: calc(50vw - 150px); /* 150px is the .popup width half */
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    width: 300px;
+    height: 80px;
+    font-size: 20px;
+    box-shadow: 0 0 10px #000;
+    background-color: #888;
+    color: #fff;
+}
+.popup-message {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.popup::backdrop {
+    background-color: rgba(0, 0, 0, 0.55);
+}
+.popup-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.popup-button-container > button {
+    width: 50px;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    padding: 3px;
+}
+.popup-button-container > button:nth-child(1) {
+    margin-right: 10px;
+    background-color: #191;    
+}
+.popup-button-container > button:nth-child(1):hover {
+    background-color: #3b3;    
+}
+.popup-button-container > button:nth-child(2) {
+    margin-left: 10px;
+    background-color: #f33;
+}
+.popup-button-container > button:nth-child(2):hover {
+    background-color: #f55;    
+}

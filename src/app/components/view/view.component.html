@@ -46,7 +46,13 @@
         </div>
         <div class="buttons-container">
             <button id="{{project._id}}" class="save-btn" [hidden]="!saveBtn" (click)="saveChanges()">Save changes</button>
-            <button id="{{project._id}}" class="delete-btn" (click)="deleteProject($event)">Delete</button>
+            <button id="{{project._id}}" class="delete-btn"  (click)="confirmDeleteProject()">Delete</button><!-- " -->
         </div>        
+        <dialog #popup class="popup">
+            <span class="popup-message">{{message}}{{project.name}}?</span>
+            <span class="popup-button-container">
+                <button (click)="deleteProject()">Yes</button><button (click)="closePopup()">No</button>
+            </span>
+        </dialog>
     </div>
 </div>

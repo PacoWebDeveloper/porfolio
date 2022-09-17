@@ -17,7 +17,7 @@ export class ViewComponent implements OnInit {
   public id!: String;
   public project!: any;
   public url: String = url;
-  public availableTechs: Array<String> = ['html','css','javascript','Angular'];
+  public availableTechs: Array<String> = ['html', 'css', 'javascript', 'Angular'];
 
   public saveBtn: boolean = false;
   public editTech: boolean = true;
@@ -30,6 +30,7 @@ export class ViewComponent implements OnInit {
   public showUploadImageBox: boolean = false;
 
   public loading: boolean = true;
+  public message: String = '';
 
   @ViewChild('name') name!: any;
   @ViewChild('description') description!: any;
@@ -43,6 +44,7 @@ export class ViewComponent implements OnInit {
   @ViewChild('Express') Express!: ElementRef;
 
   @ViewChild('successMessage') successMessage!: ElementRef;
+  @ViewChild('popup') popup!: ElementRef;
 
   constructor(
     private ProjectService: ProjectService,
@@ -66,7 +68,7 @@ export class ViewComponent implements OnInit {
       next: (v) => {
         this.project = v.results[0];
         this.loading = false;
-        
+
       },
       error: (e) => console.error(e),
       complete: () => console.info('Complete')
@@ -114,7 +116,7 @@ export class ViewComponent implements OnInit {
         case 'Express':
           this.Express.nativeElement.checked = true;
           break;
-      }      
+      }
     });
   }
   /* Gets the HTML element data from the selected item by the user and add it in projectModel.technologies */
@@ -160,25 +162,34 @@ export class ViewComponent implements OnInit {
     /* Reloads the project with its changes */
     this.getProject(this.project._id);
   }
+
   /* Uses ProjectService to send project data to the API to be deleted */
-  deleteProject(event: any): void {
-    const id = event.target.id;
-    const response = confirm('Are you sure to delete the project?');
+  deleteProject(): void {
+    const id = this.project._id;
+    /* const response = confirm('Are you sure to delete the project?'); */
 
-    if (response) {
-      this.ProjectService.deleteImage(this.project.imageUrl).subscribe({
-        next: (v) => this.ProjectService.deleteProject(id).subscribe({
-          error: (e) => console.log(e),
-          complete: () => console.log('Project deleted')
-        }),
-        error: (e) => console.log(e),
-        complete: () => console.log('Image deleted')
-      })
+    this.ProjectService.deleteImage(this.project.imageUrl).subscribe({      
+      error: (e) => console.log(e),
+      complete: () => console.log('Image deleted')
+    })
 
-    }
+    this.ProjectService.deleteProject(id).subscribe({
+      error: (e) => console.error(e),
+      complete: () => console.log('Complete')
+    })
+    
 
     localStorage.removeItem('id');
     this.goToProjectManager();
+  }
+
+  //Show a confirmation to delete a project
+  confirmDeleteProject(): void {   
+    this.message = 'Are you sure to delete your project ';
+    this.popup.nativeElement.show();
+  }
+  closePopup(): void {
+    this.popup.nativeElement.close();
   }
   /* Navigates to project-manager component */
   goToProjectManager(): void {
