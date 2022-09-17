@@ -1,4 +1,5 @@
 <div class="view-container">
+    <span #successMessage class="success-message">Changes were saved sucessfull!</span>
     <span class="go-back-btn" [routerLink]="['/project-manager']"><img src="../../../assets/img/arrow-back.svg"></span>
     <app-loading class="loading" *ngIf="loading"></app-loading>
     <div class="project-container" *ngIf="project && !loading">
@@ -46,6 +47,6 @@
         <div class="buttons-container">
             <button id="{{project._id}}" class="save-btn" [hidden]="!saveBtn" (click)="saveChanges()">Save changes</button>
             <button id="{{project._id}}" class="delete-btn" (click)="deleteProject($event)">Delete</button>
-        </div>
+        </div>        
     </div>
 </div>

@@ -42,6 +42,8 @@ export class ViewComponent implements OnInit {
   @ViewChild('NodeJS') NodeJS!: ElementRef;
   @ViewChild('Express') Express!: ElementRef;
 
+  @ViewChild('successMessage') successMessage!: ElementRef;
+
   constructor(
     private ProjectService: ProjectService,
     private uploadService: UploadService,
@@ -150,6 +152,7 @@ export class ViewComponent implements OnInit {
       error: (e) => console.error(e),
       complete: () => console.info('Update completed')
     })
+    this.showMessageMethod();
     /* Restores the initial values in variables and elements */
     this.saveBtn = false;
     this.editTech = false;
@@ -180,6 +183,14 @@ export class ViewComponent implements OnInit {
   /* Navigates to project-manager component */
   goToProjectManager(): void {
     this.router.navigate(['../project-manager']);
+  }
+
+  //Show messages: Changes saved
+  showMessageMethod(): void {
+    this.successMessage.nativeElement.classList.add('show-message')
+    setTimeout(() => {
+      this.successMessage.nativeElement.classList.remove('show-message');
+    }, 2000);
   }
 
 }
